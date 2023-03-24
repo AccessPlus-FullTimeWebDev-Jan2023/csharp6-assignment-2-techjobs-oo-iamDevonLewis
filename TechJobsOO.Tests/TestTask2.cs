@@ -54,12 +54,13 @@ namespace TechJobsOO.Tests
         [TestMethod] //3
         public void Test_Second_Location_Constructor_Initializes_Id()
         {
+            Location testLocation1 = new Location("Desert");
             //setup
             Location testLocation = new Location("Desert");
             Console.WriteLine(testLocation.Id);
 
             //verify
-            Assert.AreEqual(1, testLocation.Id, "Second constructor not able to update Id");
+            Assert.AreEqual(2, testLocation.Id, "Second constructor not able to update Id");
             Assert.IsFalse(testLocation.Id == 4, "Second constructor passes value to Id. Is this desirable?");
         }
 
