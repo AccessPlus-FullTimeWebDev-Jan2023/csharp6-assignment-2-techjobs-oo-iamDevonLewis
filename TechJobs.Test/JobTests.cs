@@ -39,6 +39,26 @@ namespace TechJobs.Tests
         {
             Assert.IsFalse(job1.Id.Equals(job2.Id));
         }
+
+        [TestMethod]
+        public void TestToStringStartsAndEndsWithNewLine()
+        {
+            Assert.IsTrue(job3.ToString().StartsWith(Environment.NewLine));
+            Assert.IsTrue(job3.ToString().EndsWith(Environment.NewLine));
+        }
+
+        [TestMethod]
+        public void TestToStringContainsCorrectLabelsAndData()
+        {
+            Assert.AreEqual(Environment.NewLine + $" ID: {job4.Id}" + Environment.NewLine + " Name: Product tester" + Environment.NewLine + " Employer: ACME" + Environment.NewLine + " Location: Desert" + Environment.NewLine + " Position Type: Quality control" + Environment.NewLine + " Core Competency: Persistence" + Environment.NewLine,job4.ToString());
+        }
+
+        [TestMethod]
+        public void TestToStringHandlesEmptyField()
+        {
+            Job job5 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+            Assert.AreEqual(Environment.NewLine + $" ID: {job5.Id}" + Environment.NewLine + " Name: Data not available" + Environment.NewLine + " Employer: Data not available" + Environment.NewLine + " Location: Data not available" + Environment.NewLine + " Position Type: Data not available" + Environment.NewLine + " Core Competency: Data not available" + Environment.NewLine, job5.ToString());
+        }
     }
 }
 

@@ -53,7 +53,35 @@ namespace TechJobsOOAutoGraded6
         // TODO: Task 5: Generate custom ToString() method.
         public override string ToString()
         {
-            return $"{Name} current {EmployerName} at {EmployerLocation} with {JobType} and a {JobCoreCompetency}";
+            //Check each field for null or empty values (IsNullOrEmpty)
+            if (string.IsNullOrEmpty(Name))
+            {
+                Name = "Data not available";
+            }
+            
+
+            if (EmployerName.Value == null || EmployerName.Value == "")
+            {
+                EmployerName.Value =  "Data not available";
+            }
+          
+            if (EmployerLocation.Value ==null || EmployerLocation.Value =="")
+            {
+                EmployerLocation.Value = "Data not available";
+            }
+            
+            if (JobType.Value == null || JobType.Value == "")
+            {
+                JobType.Value =  "Data not available";
+            }
+            
+            if (JobCoreCompetency.Value == null || JobCoreCompetency.Value == "")
+            {
+                JobCoreCompetency.Value =  "Data not available";
+            }
+            
+            return $"{Environment.NewLine} ID: {Id}{Environment.NewLine} Name: {Name}{Environment.NewLine} Employer: {EmployerName}{Environment.NewLine} Location: {EmployerLocation}{Environment.NewLine} Position Type: {JobType}{Environment.NewLine} Core Competency: {JobCoreCompetency}{Environment.NewLine}";
+            //return $"{Name} current {EmployerName} at {EmployerLocation} with {JobType} and a {JobCoreCompetency}";
         }
     }
 }
