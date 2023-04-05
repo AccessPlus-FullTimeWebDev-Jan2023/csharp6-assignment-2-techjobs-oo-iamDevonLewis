@@ -60,7 +60,7 @@ namespace TechJobsOO.Tests
             Console.WriteLine(testLocation.Id);
 
             //verify
-            Assert.AreEqual(testLocation.Id, testLocation.Id, "Second constructor not able to update Id");
+            Assert.AreEqual(9, testLocation.Id, "Second constructor not able to update Id");
             Assert.IsFalse(testLocation.Id == 4, "Second constructor passes value to Id. Is this desirable?");
         }
 
