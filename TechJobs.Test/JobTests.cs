@@ -17,8 +17,8 @@ namespace TechJobs.Tests
         [TestMethod]
         public void TestSettingJobId()
         {
-            //Assert.AreEqual(1, job1.Id);
-            //Assert.AreEqual(2,job2.Id);
+            
+            Assert.AreEqual(job1.Id + 1,job2.Id);
             Assert.IsFalse(job1.Id.Equals(job2.Id));
             
             
